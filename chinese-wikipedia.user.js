@@ -11,5 +11,5 @@
 (function() {
     'use strict';
     let pathname = window.location.pathname;
-    if (!pathname.startsWith("/zh-cn/")) window.location.pathname = pathname.replace("wiki", "zh-cn");
+    if (!pathname.startsWith("/zh-cn/")) window.location.pathname = pathname.replace(pathname.split('/')[1], "zh-cn");
 })();
