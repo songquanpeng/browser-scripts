@@ -12,6 +12,8 @@ Some brower scripts created by me.
 
 [![Install Script Now](https://img.shields.io/badge/Click%20to%20Install-雨课堂挂机脚本-green)](https://raw.githubusercontent.com/songquanpeng/browser-scripts/master/yuketang.user.js)
 
+[![Install Script Now](https://img.shields.io/badge/Click%20to%20Install-Github1s-green)](https://raw.githubusercontent.com/songquanpeng/browser-scripts/master/github1s.user.js)
+
 ## Userful Links
 1. [Greasy Fork](https://greasyfork.org/en/users/666452-songquanpeng)
 2. [Tampermonkey](https://www.tampermonkey.net/)
