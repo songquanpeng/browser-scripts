@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Enhanced arXiv
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Add some functions for arXiv
-// @author       You
+// @author       JustSong
 // @match        https://arxiv.org/abs/*
 // @grant        none
 // ==/UserScript==
@@ -15,15 +15,23 @@
         return `<button style="margin:0 8px;" class="button is-small" onclick='window.${callback}()'>${prompt}</button>`
     }
 
+    function createLinkButton(prompt, link, filename) {
+        return `<a href="${link}" download="${filename}" class="button is-small">${prompt}</a>`
+    }
+
     function main() {
         init();
         let targetElement = document.getElementsByClassName("authors")[0];
         let copyTitleButton = createButton("Copy Title", "copyTitle");
         let copyPDFLinkButton = createButton("Copy PDF Link", "copyPDFLink");
         let searchGoogleButton = createButton("Search With Google", "searchGoogle");
+        let downloadCNButton = createLinkButton("Download from mirror", `http://xxx.itp.ac.cn/pdf/${window.location.href.split('/')[4]}.pdf`, getPaperTitle());
+        let downloadOriginButton = createLinkButton("Download", `https://arxiv.org/pdf/${window.location.href.split('/')[4]}.pdf`, getPaperTitle());
         targetElement.insertAdjacentHTML('beforeend', copyTitleButton);
         targetElement.insertAdjacentHTML('beforeend', copyPDFLinkButton);
         targetElement.insertAdjacentHTML('beforeend', searchGoogleButton);
+        targetElement.insertAdjacentHTML('beforeend', downloadCNButton);
+        targetElement.insertAdjacentHTML('beforeend', downloadOriginButton);
     }
 
     function init() {
@@ -36,6 +44,7 @@
         window.getPaperTitle = getPaperTitle;
         window.copyPDFLink = copyPDFLink;
         window.searchGoogle = searchGoogle;
+        window.savePDF = savePDF;
     }
 
     function copyText(text) {
@@ -65,6 +74,10 @@
     function searchGoogle() {
         let title = window.getPaperTitle();
         window.open(`https://www.google.com/search?q=${title}`);
+    }
+
+    function savePDF() {
+
     }
     main();
 })();
