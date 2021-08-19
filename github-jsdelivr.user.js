@@ -29,7 +29,7 @@
     function main() {
       let hiddenTextArea = document.createElement("textarea");
       hiddenTextArea.setAttribute("id", "hiddenTextArea");
-      hiddenTextArea.style.cssText = "display:hidden;";
+      hiddenTextArea.style.cssText = "height: 0px; width: 0px";
       document.body.appendChild(hiddenTextArea);
       const btn = `<button class="btn" id="copyJsDelivrBtn">Copy jsDelivr Link</button>`;
       document
