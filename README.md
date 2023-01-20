@@ -16,6 +16,8 @@ Some brower scripts created by me.
 
 [![Install Script Now](https://img.shields.io/badge/Click%20to%20Install-Github%20jsDelivr%20Qucik%20Link-green)](https://raw.githubusercontent.com/songquanpeng/browser-scripts/master/github-jsdelivr.user.js)
 
+[![Install Script Now](https://img.shields.io/badge/Click%20to%20Install-Enhanced%20LeetCode-green)](https://raw.githubusercontent.com/songquanpeng/browser-scripts/master/enhanced-leetcode.user.js)
+
 ## Userful Links
 1. [Greasy Fork](https://greasyfork.org/en/users/666452-songquanpeng)
 2. [Tampermonkey](https://www.tampermonkey.net/)
