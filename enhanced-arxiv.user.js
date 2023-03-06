@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Enhanced arXiv
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Add some functions for arXiv
 // @author       JustSong
 // @match        https://arxiv.org/abs/*
@@ -26,13 +26,11 @@
         let copyPDFLinkButton = createButton("Copy PDF Link", "copyPDFLink");
         let searchGoogleButton = createButton("Search With Google", "searchGoogle");
         let searchGoogleScholarButton = createButton("Search With Google Scholar", "searchGoogleScholar");
-        let downloadCNButton = createLinkButton("Download from mirror", `http://xxx.itp.ac.cn/pdf/${window.location.href.split('/')[4]}.pdf`, getPaperTitle());
         let downloadOriginButton = createLinkButton("Download", `https://arxiv.org/pdf/${window.location.href.split('/')[4]}.pdf`, getPaperTitle());
         targetElement.insertAdjacentHTML('beforeend', copyTitleButton);
         targetElement.insertAdjacentHTML('beforeend', copyPDFLinkButton);
         targetElement.insertAdjacentHTML('beforeend', searchGoogleButton);
         targetElement.insertAdjacentHTML('beforeend', searchGoogleScholarButton);
-        targetElement.insertAdjacentHTML('beforeend', downloadCNButton);
         targetElement.insertAdjacentHTML('beforeend', downloadOriginButton);
     }
 
